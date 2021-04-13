@@ -9,6 +9,8 @@ https://www.tinkercad.com
 
 ## Scrum Git
 
+Will Axolotl
+
 ## Retrospective Day 1
 
 ## Retrospective Day 2
