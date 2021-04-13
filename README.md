@@ -1,7 +1,9 @@
 # A Rover
 
 ## Team Logo, Icon or Meme
+![Meme](/images/Meme.png)
 
+## TinkerCad
 TinkerCad Circuit basic design URL is
 https://www.tinkercad.com
 
