@@ -10,7 +10,7 @@ https://www.tinkercad.com
 ## Team Values
 
 ## Scrum Git
-
+Rishabh kite <br />
 Will Axolotl <br />
 Katy Thackray <br />
 Oskar balloon <br />
