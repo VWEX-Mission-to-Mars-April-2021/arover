@@ -10,6 +10,7 @@ https://www.tinkercad.com
 ## Scrum Git
 
 Will Axolotl
+Katy Thackray
 
 ## Retrospective Day 1
 
