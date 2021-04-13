@@ -11,7 +11,7 @@ https://www.tinkercad.com
 
 Will Axolotl
 Katy Thackray
-Oskar Tank
+Oskar balloon
 
 ## Retrospective Day 1
 
