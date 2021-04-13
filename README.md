@@ -9,9 +9,9 @@ https://www.tinkercad.com
 
 ## Scrum Git
 
-Will Axolotl
-Katy Thackray
-Oskar balloon
+Will Axolotl <br />
+Katy Thackray <br />
+Oskar balloon <br />
 
 ## Retrospective Day 1
 
