@@ -17,6 +17,10 @@ Oskar balloon <br />
 
 ## Retrospective Day 1
 
+- Communicate more frequently
+- Plan code, yet also explain clearly (ie. with comments)
+- Ensure people are assigned tasks and are ontrack
+
 ## Retrospective Day 2
 
 ## Retrospective Final Day
