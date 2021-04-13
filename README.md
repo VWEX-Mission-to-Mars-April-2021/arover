@@ -11,6 +11,7 @@ https://www.tinkercad.com
 
 Will Axolotl
 Katy Thackray
+Oskar Tank
 
 ## Retrospective Day 1
 
