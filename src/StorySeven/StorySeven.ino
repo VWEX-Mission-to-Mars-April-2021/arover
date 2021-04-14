@@ -86,12 +86,12 @@ void loop(){
   if (count <= 4) {  
     forward(0);
     
-    if (leftcounter == 150){
+    if (leftcounter == (count == 2 ? 300 : 150)){
       halt(0);
       leftcounter = 0;
       count++;
 
-      while (leftcounter <= 95) {
+      while (leftcounter <= 90) {
         digitalWrite(enableleft,HIGH);
         digitalWrite(enableright,HIGH);
         digitalWrite(fwdleft,LOW);
