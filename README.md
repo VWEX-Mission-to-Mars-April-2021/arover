@@ -17,11 +17,21 @@ Oskar balloon <br />
 
 ## Retrospective Day 1
 
+Could improve on:
 - Communicate more frequently
 - Plan code, yet also explain clearly (ie. with comments)
 - Ensure people are assigned tasks and are ontrack
 
 ## Retrospective Day 2
+
+Improved on:
+- Communication between ourselves
+- Efficiency of working on tasks
+
+Could improve on:
+- Proof read the code more often to find errors
+- Comment more oftenly
+- Using time more wisely (wait less on testing)
 
 ## Retrospective Final Day
 
