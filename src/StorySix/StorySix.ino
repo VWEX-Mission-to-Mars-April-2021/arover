@@ -88,6 +88,7 @@ void loop(){
     return;
   }
 
+  forward(0);
   //Check if counters are equal
   if(leftcounter != rightcounter){
     if(leftcounter < rightcounter){
@@ -95,21 +96,20 @@ void loop(){
       leftspeed += 50;
       rightspeed -= 50;  
       forward(100);
+      updateSpeeds();
     }
-  else if(rightcounter < leftcounter){
+    else if(rightcounter < leftcounter){
     // right enable should increase
-    leftspeed -= 50;
-    rightspeed += 50;
-    forward(100);
-  
+      leftspeed -= 50;
+      rightspeed += 50;
+      forward(100);
+      updateSpeeds();
+
     }
   }
   else {
     forward(100);
-  }
-    
-  updateSpeeds();
-  
+  }  
 }
 
 
