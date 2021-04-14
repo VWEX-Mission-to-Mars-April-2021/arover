@@ -33,8 +33,7 @@ void setup()
 
   
   analogWrite(enableleft, rightspeed);
-  analogWrite(enableright, leftspeed);
-  
+  analogWrite(enableright, leftspeed); 
 }
 
 void halt(int mSeconds){ //stopps rover advance
@@ -85,33 +84,36 @@ void updateSpeeds(){
 void loop(){
   //10 seconds has passed whilst travelling
   if(millis() >= 10000){
-    return;
+    halt(0);
   }
+  else{ //If 10 seconds have not passed yet
 
-  forward(0);
-  //Check if counters are equal
-  if(leftcounter != rightcounter){
-    if(leftcounter < rightcounter){
-    // leftenable should increase
-      leftspeed += 50;
-      rightspeed -= 50;  
-      forward(100);
-      updateSpeeds();
+    forward(0);
+    //Check if counters are equal
+    if(leftcounter != rightcounter){
+      if(leftcounter < rightcounter){
+      // leftenable should increase
+        leftspeed += 20;
+        rightspeed -= 20;
+        forward(0);
+        updateSpeeds();
+      }
+      else if(rightcounter < leftcounter){
+      // right enable should increase
+        leftspeed -= 20;
+        rightspeed += 20;
+        forward(0);
+        updateSpeeds();
+      }
     }
-    else if(rightcounter < leftcounter){
-    // right enable should increase
-      leftspeed -= 50;
-      rightspeed += 50;
-      forward(100);
+    else {
+      forward(0);
+      leftspeed = 150;
+      rightspeed = 150;
       updateSpeeds();
-
-    }
-  }
-  else {
-    forward(100);
-  }  
+     }  
+   }
 }
-
 
 //Increment left and right counters
 void lefttracker(){
