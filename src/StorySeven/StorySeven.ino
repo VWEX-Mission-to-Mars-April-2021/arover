@@ -82,17 +82,22 @@ void updateSpeeds(){
 }
 
 void loop(){
+  digitalWrite(enableleft,HIGH);
+  digitalWrite(enableright,HIGH);
+  digitalWrite(fwdleft,LOW);
   digitalWrite(fwdright,HIGH);
-    digitalWrite(fwdleft,LOW);
-    digitalWrite(revleft,HIGH);
+  
+  digitalWrite(revright,LOW);
+  digitalWrite(revleft,HIGH);
 
   if ((leftcounter % 10) == 0){
       halt(2000);
-
   
   }
   
 }
+
+
 //Increment left and right counters
 void lefttracker(){
   leftcounter++;
