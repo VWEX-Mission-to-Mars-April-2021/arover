@@ -83,6 +83,11 @@ void updateSpeeds(){
 }
 
 void loop(){
+  //10 seconds has passed whilst travelling
+  if(millis() >= 10000){
+    return;
+  }
+
   //Check if counters are equal
   if(leftcounter != rightcounter){
     if(leftcounter < rightcounter){
