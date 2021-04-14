@@ -9,6 +9,7 @@ const int rightfeedback = 3;
 volatile int leftcounter = 0;
 volatile int rightcounter = 0;
 const int reduc = 50;
+int count = 0;
 
 const int startspeed = 150;
 int leftspeed; 
@@ -82,19 +83,29 @@ void updateSpeeds(){
 }
 
 void loop(){
-  digitalWrite(enableleft,HIGH);
-  digitalWrite(enableright,HIGH);
-  digitalWrite(fwdleft,LOW);
-  digitalWrite(fwdright,HIGH);
-  
-  digitalWrite(revright,LOW);
-  digitalWrite(revleft,HIGH);
+  if (count <= 4) {  
+    forward(0);
+    
+    if (leftcounter == 150){
+      halt(0);
+      leftcounter = 0;
+      count++;
 
-  if ((leftcounter % 10) == 0){
-      halt(2000);
-  
+      while (leftcounter <= 95) {
+        digitalWrite(enableleft,HIGH);
+        digitalWrite(enableright,HIGH);
+        digitalWrite(fwdleft,LOW);
+        digitalWrite(fwdright,HIGH);
+
+        digitalWrite(revright,LOW);
+        digitalWrite(revleft,HIGH);
+      }
+
+      leftcounter = 0;
+    }
+  } else {
+    halt(0);
   }
-  
 }
 
 
