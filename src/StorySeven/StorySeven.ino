@@ -90,7 +90,7 @@ void loop(){
       leftcounter = 0;
       count++;
       
-      //Turn 85 degrees
+      //Turn 90 degrees after 85 revolutions
       while (leftcounter <= 85) {
         digitalWrite(enableleft,HIGH);
         digitalWrite(enableright,HIGH);
