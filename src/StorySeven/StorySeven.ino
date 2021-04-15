@@ -31,7 +31,6 @@ void setup()
   
   leftspeed = startspeed;
   rightspeed = startspeed;
-
   
   analogWrite(enableleft, rightspeed);
   analogWrite(enableright, leftspeed); 
@@ -83,9 +82,9 @@ void updateSpeeds(){
 }
 
 void loop(){
-  if (count <= 4) {  
+  if (count <= 3) {  
     forward(0);
-    
+    //when count is 2 the rover needs to go twice as far
     if (leftcounter == (count == 2 ? 300 : 150)){
       halt(0);
       leftcounter = 0;
@@ -104,10 +103,10 @@ void loop(){
       leftcounter = 0;
     }
   } else {
-    halt(0);
+    forward(0);
+    halt(20000);
   }
 }
-
 
 //Increment left and right counters
 void lefttracker(){
