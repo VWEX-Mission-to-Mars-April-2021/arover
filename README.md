@@ -8,6 +8,7 @@ TinkerCad Circuit basic design URL is
 https://www.tinkercad.com
 
 ## Team Values
+- Post many mars rover memes
 
 ## Scrum Git
 Rishabh kite <br />
