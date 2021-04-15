@@ -82,7 +82,7 @@ void updateSpeeds(){
 }
 
 void loop(){
-  if (count <= 3) {  
+  if (count <= 4) {  
     forward(0);
     //when count is 2 the rover needs to go twice as far
     if (leftcounter == (count == 2 ? 300 : 150)){
