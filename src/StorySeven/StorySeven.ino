@@ -90,7 +90,7 @@ void loop(){
       leftcounter = 0;
       count++;
 
-      while (leftcounter <= 90) {
+      while (leftcounter <= 90 && count < 4) {
         digitalWrite(enableleft,HIGH);
         digitalWrite(enableright,HIGH);
         digitalWrite(fwdleft,LOW);
@@ -103,7 +103,6 @@ void loop(){
       leftcounter = 0;
     }
   } else {
-    forward(0);
     halt(20000);
   }
 }
