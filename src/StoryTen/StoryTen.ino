@@ -121,7 +121,7 @@ void setup() {
 bool objectBelow() {
   int distance = sonar.ping_cm();
   
-  return distance <= 12; // If there is an obstacle 12cm or less ahead
+  return distance <= 15; // If there is an obstacle 12cm or less ahead
 }
 
 void loop() {
