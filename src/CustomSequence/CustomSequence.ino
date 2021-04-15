@@ -132,6 +132,7 @@ void rsnakey(){
   turnright(2000);
   reverse(1000);
   turnleft(2000);
+  reverse(1000);
 }
 
 //Light sensed from centre sensor
@@ -145,6 +146,7 @@ void snakey(){
   turnright(2000);
   forward(1000);
   turnleft(2000);
+  forward(1000);
 }
 
 void loop(){//main routine
