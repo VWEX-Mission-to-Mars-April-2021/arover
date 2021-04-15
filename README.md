@@ -36,6 +36,15 @@ Could improve on:
 
 ## Retrospective Final Day
 
+Improved on:
+- Organisation of completing tasks
+- Assigning peoples' roles
+- Code running as expected
+
+The mission could've been better if:
+- There were more rovers to test on
+- We had specified break times
+
 ---------------------------------------------------------
 
 This is the readme. Formatting of text is as follows.
