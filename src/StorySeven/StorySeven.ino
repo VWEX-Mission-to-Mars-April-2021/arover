@@ -84,15 +84,14 @@ void updateSpeeds(){
 void loop(){
   if (count <= 3) {  
     forward(0);
-    //when count is 2 the rover needs to go twice as far 
+
     if (leftcounter == 150) {
       halt(0);
       leftcounter = 0;
       count++;
       
-
-      //Turn 90 degrees
-      while (leftcounter <= 90) {
+      //Turn 85 degrees
+      while (leftcounter <= 85) {
         digitalWrite(enableleft,HIGH);
         digitalWrite(enableright,HIGH);
         digitalWrite(fwdleft,LOW);
