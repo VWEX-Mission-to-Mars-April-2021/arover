@@ -35,20 +35,23 @@ void setLow(int pin) {
   digitalWrite(pin, LOW);
 }
 
-void halt(int mseconds){ // Stops rover advance
+void halt(int mseconds) { // Stops rover advance
   setLow(fwdleft);
   setLow(fwdright);
+  
   setLow(revleft);
   setLow(revright);
+  
   delay(mseconds);
 }
 
-void reverse(int mseconds){ // Stop motor forward, rover reverses
+void reverse(int mseconds) { // Stop motor forward, rover reverses
   setLow(fwdleft);
   setLow(fwdright);
 
   setHigh(revleft);
   setHigh(revright);
+  
   delay(mseconds);
 }
 
@@ -58,6 +61,7 @@ void forward(int mseconds) { // Stop motor reverse, rover forward
   
   setHigh(fwdleft);
   setHigh(fwdright);
+  
   delay(mseconds);
   
 }
@@ -65,26 +69,28 @@ void forward(int mseconds) { // Stop motor reverse, rover forward
 void turnLeft(int mseconds)  { // Left turn by motor speed change
   analogWrite(enableright, 255);
   analogWrite(enableleft, 120);
+  
   delay(mseconds);
 }
 
 void turnRight(int mseconds) { // Right turn by motor speed change
   analogWrite(enableleft, 255);
   analogWrite(enableright, 120);
+  
   delay(mseconds);
 }
 
-void updateSpeeds(){
-  analogWrite(enableleft,rightspeed);
-  analogWrite(enableright,leftspeed);
+void updateSpeeds() {
+  analogWrite(enableleft, rightspeed);
+  analogWrite(enableright, leftspeed);
 }
 
 // Increment left and right counters
-void leftTracker(){
+void leftTracker() {
   leftcounter++;
 }
 
-void rightTracker(){
+void rightTracker() {
   rightcounter++; 
 }
 
@@ -112,14 +118,16 @@ void setup() {
 }
 
 // Return true if there is an obstacle in the path
-bool objectBelow(){
+bool objectBelow() {
   int distance = sonar.ping_cm();
+  
   return distance <= 12; // If there is an obstacle 12cm or less ahead
 }
 
 void loop() {
  forward(0);
- if(!objectBelow()){
+ 
+ if(!objectBelow()) {
     halt(1000);
     reverse(1000);
     halt(20000);
