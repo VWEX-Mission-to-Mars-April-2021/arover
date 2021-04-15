@@ -100,25 +100,25 @@ void lefttracker(){
 void righttracker(){
   rightcounter++; 
 }
-// Turn left by 180 degrees
-void turnLeft180() {
-  leftcounter = 0;
-  halt(0);
 
-  while (leftcounter <= 170){
-    digitalWrite(enableleft, HIGH);
-    digitalWrite(enableright, HIGH);
-    
-    digitalWrite(fwdleft, LOW);
-    digitalWrite(fwdright, HIGH);
-    
-    digitalWrite(revleft, HIGH);    
-    digitalWrite(revright, LOW);
+void turnAngle(int angle){//angle should be between 0 and 360
+      int counts = round((float)85/90 * (int)angle);
+      leftcounter = 0;
+      halt(0);
+
+    while (leftcounter <= counts){
+      digitalWrite(enableleft, HIGH);
+      digitalWrite(enableright, HIGH);
+
+      digitalWrite(fwdleft, LOW);
+      digitalWrite(fwdright, HIGH);
+
+      digitalWrite(revleft, HIGH);    
+      digitalWrite(revright, LOW);
+    }
+
+    leftcounter = 0;
   }
-
-  leftcounter = 0;
-}
-
 
 //Detect obstacles
 bool obstacle_in_path(){
@@ -128,10 +128,10 @@ bool obstacle_in_path(){
 
 //reverse snake motion
 void rsnakey(){
-  reverse(2000);
-  turnright(1000);
-  reverse(2000);
-  turnleft(1000);
+  reverse(1000);
+  turnright(2000);
+  reverse(1000);
+  turnleft(2000);
 }
 
 //Light sensed from centre sensor
@@ -141,23 +141,60 @@ int lightSensed(){
 
 //forward snake motion
 void snakey(){
-  forward(2000);
-  turnright(1000);
-  forward(2000);
-  turnleft(1000);
+  forward(1000);
+  turnright(2000);
+  forward(1000);
+  turnleft(2000);
 }
 
 void loop(){//main routine
-//counter++;
-//if (counter % 2 == 1) {
-  rsnakey();
-  turnLeft180();
-  snakey();
-  turnLeft180();
-//}
-//else if(counter % 2 == 0){
-    
-  //}
+  count++;
+  if (count == 1) {//snakey motion on count 1
+    rsnakey();
+    turnAngle(180);
+    snakey();
+    turnAngle(180);
+  }
+  else if(count == 2){//search for light intensity
+      int lightLevels[8];
+      for(int i=0;i<8;i++){//rotate 45 degree, measure light, repeat 7 more times
+        lightLevels[i] = lightSensed();
+        turnAngle(45);
+      }
+      int turnsNeeded = 0;
+      int highestLevel = 0;
+
+      for (int i = 0; i < 8; i++) {//determins highest light intensity measured
+        int level = lightLevels[i];
+      
+        if (level > highestLevel) {
+          highestLevel = level;
+          turnsNeeded = i;//finds no of 45 degree turns required
+        }
+      }  
+        //code to rotate 
+        turnAngle(turnsNeeded * 45);
+      forward(1000);
+  }
+  else if(count == 3 ){
   
-  
+    for (int i = 0; i < 10; i++){
+      {
+        int num = random(1, 3);
+        if (num == 1) {
+          //Turn random angle
+          int angle = random(1,360);
+          turnAngle(angle);
+        } else if (num == 2) {
+          //Reverse for 2 seconds?
+          reverse(2000);
+          halt(0);
+        } else {
+          //Forward 1 sec? 
+          forward(1000);
+          halt(0);
+        }
+      }
+    }
+  }
 }
